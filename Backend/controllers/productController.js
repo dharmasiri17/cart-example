@@ -12,7 +12,7 @@ export const createProduct = async (req, res) => {
         res.status(400).json({ error: "Error saving product", details: error.message });
     }
 };
-
+ 
 // Get All Products
 export const getAllProducts = async (req, res) => {
     try {
