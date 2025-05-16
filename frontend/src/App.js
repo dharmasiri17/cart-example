@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+import React, { useState } from "react";
+import Navbar from "./components/Navbar";
+import Sidebar from "./components/sideBar";
 import './App.css';
 
+
 function App() {
+  const [cartCount, setCartCount] = useState(0);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar cartCount={cartCount} />
+      <div style={{ display: "flex" }}>
+        <Sidebar />
+        <div>
+          <main className="main-content" style={{ marginLeft: "460px", padding: "20px", flexGrow: 1 }}>
+          <h2>Welcome to the Store</h2>
+          <p>Explore our products and add them to your cart!</p>
+          {/* Add your product list or content here */}
+        </main>
+        </div>
+        
+      </div>
     </div>
   );
 }
